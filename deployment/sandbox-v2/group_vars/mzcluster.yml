@@ -2,7 +2,7 @@
 # ansible_user: root
 
 cluster_name: 'mzcluster'  # Same as in hosts.ini
-cluster_master: 'mzmaster.sb' # Same as in hosts.ini
+cluster_master: 'ip161.ip-144-217-96.net' # Same as in hosts.ini
 
 # Kubernetes
 kube_version: v1.19.0
@@ -24,7 +24,7 @@ network: flannel
 
 # Change this to an appropriate interface, preferably a private network.
 # Default is 'eth0'.  
-network_interface: "eth0"
+network_interface: "ens192"
 ansible_interface_param: 'ansible_{{network_interface}}'
 kubemaster_ip: '{{ hostvars[cluster_master][ansible_interface_param].ipv4.address }}'
 
